@@ -11,3 +11,17 @@ print("******")
 mylist.insert_after_node(2, 4)
 mylist.insert_after_node(1, 5)
 mylist.print_list()
+print("******")
+# mylist.delete_node(2)
+# mylist.print_list()
+print("******")
+mylist.delete_node(1)
+mylist.print_list()
+print("******")
+# mylist.delete_node(5)
+# mylist.print_list()
+mylist.delete_at_index(4)
+mylist.print_list()
+
+
+
