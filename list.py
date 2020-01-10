@@ -69,7 +69,28 @@ class SList:
                 prev = current # prev will always go one node behind current
                 current = current.next # move current to the next node
                 count += 1
-            
+    # Test Case 
+    # 2 -> 4 -> 10 -> 5 -> 11 -> 22 -> None
+    # Expect => 22 -> 11 -> 5 -> 10 -> 4 -> 2 -> None
+    def reverse(self):
+        # We need three pointers previous, current, next_node
+
+        prev = None # Points to nothing at the beggining 
+        current = self.head # points to the first node
+        next_node = current.next # points to the second node
+
+        if next_node == None: # assume there are only two nodes on the list
+            current.next = prev
+            self.head = current
+            prev = None
+        while next_node != None: # while we do not reach the end of the list
+            current.next = prev # current pointer points to the prev node
+            prev = current # at this point current looses contact with the next_node 
+            current = next_node # current is pointing to the next_node
+            next_node = next_node.next # next_node moves to the following one
+        current.next = prev #need to update the last node as it is left witout a link to the rest of the list   
+        self.head = current # make the head point to the new current position
+
 
     def print_list(self):
         current = self.head

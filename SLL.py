@@ -3,6 +3,9 @@ import list
 mylist = list.SList() # instantiating the class of SLL
 mylist.add_to_back(10)
 mylist.add_to_back(1)
+mylist.add_to_back(8)
+mylist.add_to_back(11)
+mylist.add_to_back(22)
 mylist.print_list()
 print("******")
 mylist.add_to_front(2)
@@ -22,6 +25,8 @@ print("******")
 # mylist.print_list()
 mylist.delete_at_index(4)
 mylist.print_list()
-
+print("******")
+mylist.reverse()
+mylist.print_list()
 
 
