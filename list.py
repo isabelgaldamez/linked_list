@@ -91,6 +91,53 @@ class SList:
         current.next = prev #need to update the last node as it is left witout a link to the rest of the list   
         self.head = current # make the head point to the new current position
 
+    def swap_nodes(self, key_1, key_2):
+        # we will use two pointers to find key_1
+        current_1 = self.head
+        prev_1 = None
+
+        # we will use two pointers to find key_1
+        current_2 = self.head
+        prev_2 = None
+
+        if key_1 == key_2:
+            return 
+
+        # Assuming key_1 is the first node
+        if self.head.value == key_1:
+            # move the pointers one node over
+            prev_2 = current_2 
+            current_2 = current_2.next
+            # keep looping until we find the second value
+            while current_2 != None and current_2.value != key_2: 
+                prev_2 = current_2
+                current_2 = current_2.next
+            # update the pointers so that the head is on the correct swapped node
+            prev_2.next = current_2.next
+            current_2.next = prev_2
+            self.head = current_2
+            return 
+
+        # if the nodes are in bettwen the list, loop through it until found
+        while current_1 != None and current_1.value != key_1:
+                prev_1 = current_1 
+                current_1 = current_1.next
+
+        while current_2 != None and current_2.value != key_2:
+                prev_2 = current_2 
+                current_2 = current_2.next
+        
+        # swap the two nodes
+        if prev_1 != None:
+            prev_1.next = current_2
+            prev_2.next = current_2.next
+            current_2.next = current_1
+
+        # if one of the elements is not present on the list
+        if not current_1 or not current_2: 
+            return
+
+
 
     def print_list(self):
         current = self.head

@@ -28,5 +28,11 @@ mylist.print_list()
 print("******")
 mylist.reverse()
 mylist.print_list()
+print("******")
+mylist.swap_nodes(5, 10)
+mylist.print_list()
+print("******")
+mylist.swap_nodes(22, 11)
+mylist.print_list()
 
 
