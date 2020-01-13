@@ -137,7 +137,46 @@ class SList:
         if not current_1 or not current_2: 
             return
 
+    def list_length_iterative(self):
+        count = 0
+        current = self.head
+        while current != None:
+            count += 1
+            current = current.next
+        print("length is:",count)
 
+    def list_length_recursive(self, node):
+        if node == None:
+            return 0
+        return 1 + self.list_length_recursive(node.next)
+
+    def find_nth_to_last(self, position):
+        current = self.head
+        count = position
+        # first move current node
+        while count != 0 and current != None:   
+            count -= 1
+            current = current.next
+
+        nth_node = self.head
+        # Once we have nth distance, start moving the back node nth distance
+        while current != None:
+            current = current.next 
+            nth_node = nth_node.next
+        print("None at position: " , position , " is " , nth_node.value)
+        return 
+
+    def isPalindrome(self):
+        word = ""
+        current = self.head
+        while current != None:
+            word += current.value
+            current = current.next   
+
+        if word == word[::-1]:
+            return True
+        else:
+            return False
 
     def print_list(self):
         current = self.head

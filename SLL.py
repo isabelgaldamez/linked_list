@@ -28,11 +28,28 @@ mylist.print_list()
 print("******")
 mylist.reverse()
 mylist.print_list()
+print("********")
+mylist.find_nth_to_last(3)
+# print("******")
+# mylist.list_length_iterative()
+# print("******")
+# print(mylist.list_length_recursive(mylist.head))
+# print("******")
+# mylist.swap_nodes(5, 10)
+# mylist.print_list()
+# print("******")
+# mylist.swap_nodes(22, 11)
+# mylist.print_list()
+myPalindrome = list.SList() # instantiating the class of SLL
+myPalindrome.add_to_back('S')
+myPalindrome.add_to_back('O')
+myPalindrome.add_to_back('L')
+# myPalindrome.add_to_back('A')
+# myPalindrome.add_to_back('R')
 print("******")
-mylist.swap_nodes(5, 10)
-mylist.print_list()
-print("******")
-mylist.swap_nodes(22, 11)
-mylist.print_list()
+print(myPalindrome.isPalindrome())
+
+
+
 
 
